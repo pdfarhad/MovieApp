@@ -2,21 +2,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { APP_BASE_HREF } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { MovieComponent } from './movie/movie.component';
+import { MovieListComponent } from './movie\movie-list/movie-list.component';
+import { MovieDetailComponent } from './movie\movie-detail/movie-detail.component';
+import { MovieCardComponent } from './movie\movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MovieComponent,
+    MovieListComponent,
+    MovieDetailComponent,
+    MovieCardComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule.forRoot()
+    // RouterModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: APP_BASE_HREF,
+    useValue: '<%= APP_BASE%>'
+
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
