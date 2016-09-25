@@ -7,24 +7,24 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { MovieComponent } from './movie/movie.component';
-import { MovieListComponent } from './movie\movie-list/movie-list.component';
-import { MovieDetailComponent } from './movie\movie-detail/movie-detail.component';
-import { MovieCardComponent } from './movie\movie-card/movie-card.component';
+import {MovieModule} from './movie/movie.module';
+
+// import { MovieComponent } from './movie/movie.component';
+// import { MovieListComponent } from './movie/movie-list/movie-list.component';
+// import { MovieDetailComponent } from './movie/movie-detail/movie-detail.component';
+// import { MovieCardComponent } from './movie/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieComponent,
-    MovieListComponent,
-    MovieDetailComponent,
-    MovieCardComponent,
+   
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MovieModule,
     SharedModule.forRoot()
     // RouterModule.forRoot()
   ],
